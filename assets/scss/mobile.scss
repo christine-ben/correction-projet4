@@ -1,3 +1,95 @@
+
+
+
+@import "variable";
+
+/* PAGE */
+
+
+/* KEYFRAMES */ 
+/* KEYFRAMES (l'ecran de chargement): Si une liste d'étapes ne spécifie pas le début (0%/from) ou la fin (100%/to) 
+d'une animation, le navigateur va utiliser les styles de l'élement définis par ailleurs.
+Seules les propriétés qui sont définies sur les étapes de début (0%) et de fin (100%) seront animées.*/
+@keyframes loadscreen {
+    /*from :Indique le point de départ de l'animation (correspond à un avancement de 0%).*/
+    from {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+/*to :Indique la fin de l'animation (correspond à un avancement de 100%).*/
+    to {
+        opacity: 0;
+        visibility: hidden;
+        transform: rotate(360deg);
+    }
+}
+/*utilisons la fonction de transformation  scaleY()  pour animer l'échelle verticale de ces 
+barres dans le temps, en commençant à 0 % et en terminant à 100 % :*/
+@keyframes bars {
+    0% {
+      transform: scaleY(0.5);
+      /**opacity :définit la transparence d'un élément. Autrement dit, elle permet de définir 
+        le degré de visibilité de l'arrière-plan sur lequel est placé l'élément.*/
+      opacity: 0.7;
+    }
+    
+    100% {
+      transform: scaleY(1.0);
+      opacity: 1;
+    }
+  }
+
+@keyframes new {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* KEYFRAMES */
+/*on remarque que les sélecteurs a,et li sont imbriqués à l'intérieur du body. 
+C'est un excellent moyen d'organiser notre CSS et de le rendre plus  lisible.
+*Sass: nous permettra d'imbriquer nos sélecteurs CSS d'une manière qui suit la même 
+hiérarchie visuelle que notre HTML */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0px auto;
+
+    a {
+        cursor: pointer;
+        text-decoration: none;
+        color: black;
+    }
+
+    li {
+        list-style-type: none;
+    }
+}
+/* <input> de type checkbox sont affichés sous la forme de boîtes à cocher qui sont cochées lorsqu'elles sont activées.*/
+input[type="checkbox"] {
+    display: none;
+}
+
+.Roboto_bold {
+ font-family: 'Roboto', sans-serif;
+}
+
+.Roboto_light {
+font-family: 'Roboto', sans-serif;
+}
+
+.center {
+    max-width: 1440px;
+    margin: auto;
+}
+
 /* -------------LOADER------------------------------------ */
 
 .loader {
@@ -589,3 +681,5 @@ i.fa-solid.location_icon {
 }
 
 /*--fin code MENU -----------------------------------------*/ 
+
+/* fin PAGE MENU*/
