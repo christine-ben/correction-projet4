@@ -1,0 +1,24 @@
+/*definission : Une variable Sass est un conteneur pour une valeur. L’idée est de lier un nom à une valeur 
+puis d’utiliser ensuite ce nom à la place de la valeur dans le code. 
+Le nom utilisé sera ensuite converti automatiquement en la valeur à laquelle il est lié.
+ Cela permet une plus grande clarté dans le code et une bien meilleure maintenabilité 
+ puisque si on souhaite changer la valeur en question il suffit de la faire une fois à l’endroit où on l’a lié au nom.
+Les variables Sass sont très simple d’utilisation : 
+il suffit d’utiliser un signe $ (dollar) suivi d’un nom pour déclarer (c’est-à-dire créer) une variable
+ et d’affecter une valeur à ce nom en séparant le nom de la valeur par le signe : (deux-points).*/
+
+ /*variables*****/
+ $background-color_explorer: #dcdcdc62;
+ $color-primary: #9356DC;
+ $color-secondary: #FF79DA;
+ $color-tertiary: #99E2D0;
+ $bg-clr-main: #F2F2F2;
+ 
+ $size-bar: 3vh;
+ $num-bars: 5;
+ $anim-dur: 800ms;
+ /*Chaque itération à travers la boucle produira un nouveau sélecteur, 
+ avec le numéro d'index de l'itération utilisé dans son nom, ainsi que pour multiplier le 
+  $anim-delay  et créer un délai de lancement qui sera incrémenté au fur et à mesure. 
+  $anim-delay  est réglé sur la durée de l'animation divisée par le nombre de barres.*/
+ $anim-delay: calc($anim-dur/$num-bars);

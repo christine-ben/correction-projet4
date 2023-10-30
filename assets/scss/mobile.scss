@@ -1,59 +1,681 @@
+@import "variables";
+
+/* PAGE */
+
+
+/* KEYFRAMES */ 
+/* KEYFRAMES (l'ecran de chargement): Si une liste d'étapes ne spécifie pas le début (0%/from) ou la fin (100%/to) 
+d'une animation, le navigateur va utiliser les styles de l'élement définis par ailleurs.
+Seules les propriétés qui sont définies sur les étapes de début (0%) et de fin (100%) seront animées.*/
+@keyframes loadscreen {
+    /*from :Indique le point de départ de l'animation (correspond à un avancement de 0%).*/
+    from {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+/*to :Indique la fin de l'animation (correspond à un avancement de 100%).*/
+    to {
+        opacity: 0;
+        visibility: hidden;
+        transform: rotate(360deg);
+    }
+}
+/*utilisons la fonction de transformation  scaleY()  pour animer l'échelle verticale de ces 
+barres dans le temps, en commençant à 0 % et en terminant à 100 % :*/
+@keyframes bars {
+    0% {
+      transform: scaleY(0.5);
+      /**opacity :définit la transparence d'un élément. Autrement dit, elle permet de définir 
+        le degré de visibilité de l'arrière-plan sur lequel est placé l'élément.*/
+      opacity: 0.7;
+    }
+    
+    100% {
+      transform: scaleY(1.0);
+      opacity: 1;
+    }
+  }
+
+@keyframes new {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* KEYFRAMES */
+/*on remarque que les sélecteurs a,et li sont imbriqués à l'intérieur du body. 
+C'est un excellent moyen d'organiser notre CSS et de le rendre plus  lisible.
+*Sass: nous permettra d'imbriquer nos sélecteurs CSS d'une manière qui suit la même 
+hiérarchie visuelle que notre HTML */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0px auto;
+
+    a {
+        cursor: pointer;
+        text-decoration: none;
+        color: black;
+    }
+
+    li {
+        list-style-type: none;
+    }
+}
+/* <input> de type checkbox sont affichés sous la forme de boîtes à cocher qui sont cochées lorsqu'elles sont activées.*/
+input[type="checkbox"] {
+    display: none;
+}
+
+.Roboto_bold {
+ font-family: 'Roboto', sans-serif;
+}
+
+.Roboto_light {
+font-family: 'Roboto', sans-serif;
+}
+
+.center {
+    max-width:600 px;
+    margin: auto;
+}
+/* -------------LOADER------------------------------------ */
+
+.loader {
+    background: rgba(255, 255, 255, 0.85);
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    /*le z-index détermine l'ordre des différentes couches que formeront les éléments. Généralement,
+   un élément couvrira un autre élément si sa valeur de z-index est supérieure à celle du deuxième élément.*/
+    z-index: 100;
+    animation: loadscreen 1s 4s forwards;
+}
+
+.load {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+   /*translate() permet de déplacer un élément sur le plan représenté par le document.*/
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-around;
+    /*configuratin des dimensions pour les barre*/
+    width: 20vh;
+    height: 15vh;
+    
+    &_bar {
+        width: 3vh;
+        height: 100%;
+        border-radius: 20px;
+        /*Bien sûr, pour que nos keyframes aient un effet sur nos barres et commencent à animer leur échelle,
+         nous devons d'abord les appliquer au sélecteur .bars 
+        Alors configurons une animation à l'aide de @keyframes bars et une durée de 800 ms
+        La variable  $anim-dur  correspond à la durée de notre animation. */
+        animation: bars $anim-dur backwards infinite;
+        /*Réglons donc le mode  animation-fill-mode  sur backwards pour
+         étendre les valeurs de départ de l'animation pendant le délai et
+         dire au navigateur de lire l'animation à l'infini en lui assignant le mot clé « infinite »*/
+        animation-direction: alternate;
+        /* boucles permettent de répéter une instruction autant de fois que on le souhaite.
+        Configurons une boucle Sass @for pour l'itération à travers un ensemble de nombres allant de un à cinq, 
+        en incrémentant le nom du sélecteur et le délai de l'animation :*/
+        @for $i from 1 through $num-bars {
+            &--#{$i} {
+                animation-delay: $anim-delay * $i;
+            }
+        }
+  
+        &-1 {
+            background: #9356dc;
+        }
+        
+        &-2 {
+            background: #FF79DA;
+        }
+    
+        &-3 {
+            background: #99E2D0;
+        }
+        &-4 {
+            background: #48df5c;
+        }
+        &-5 {
+            background: #e412c1;
+        }
+    }
+}
+
+/* -------------------fin LOADER------------------------------------- */
+
+/* --code HEADER ----------------------------------------------------- */
+
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 50;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    box-shadow: 5px 0px 20px rgb(167, 167, 167);
+    
+    &_logo {
+        margin: auto;
+        width: 200px;
+        padding: 15px 0px 15px 0px;
+    }
+}
+
+/* --fin code HEADER -----------------------------------------------------*/
+
+/* --  code LOCATION (barre de recherche) --------------------------------------- */
+
+.location_search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 65px;
+    padding: 5px;
+    background-color: #dedcdc;
+    
+    &_icon {
+        font-size: 22px;
+        margin-right: 20px;
+    }
+
+    & input {
+        border: none;
+        background-color: #dedcdc;
+        height: 55px;
+        width: 165px;
+        font-size: 22px;
+        /*placeholder :Cela permet de personnaliser l'apparence de ce texte.*/
+        &::placeholder {
+            opacity: 1;
+            color: black;
+            font-family: 'Roboto';
+            font-size: 22px;
+        }
+    }
+
+    &_searchInput:focus {
+        outline-color: $color-primary
+    }
+}
+
+
+i.fa-solid.location_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+
+/* -- fin code LOCATION (barre de recherche) ---------------------------------------*/
+
+/* --  code EXPLORER -------------------------------- */
+
 .explorer {
     background: none;
-    background-color: $background-color_explorer;
-}
-.operation_cards {
+	background-color: $background-color_explorer;
+    background-size: cover;
+    display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding-left: 15px;
+    text-align: center;
+    padding: 50px 5px 40px 5px;
+
+    &_title {
+        font-size: 33px;
+        margin: 10px 5px;
+    }
+
+    &_subtitle {
+        font-size: 23px;
+    }
+
+    &_link {
+        width: 320px;
+        height: 70px;
+        font-size: 23px;
+        
+    }
 }
-.operation_cards_card {
-    width: 95%;
-    margin-bottom: 20px;
-    box-shadow: 1px 2px 20px rgba(167, 167, 167, 0.5);
+/*bouttan (commander)*/
+.btn_main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    color: white;
+    background: linear-gradient($color-secondary, $color-primary);
+    border-radius: 40px;
+    box-shadow: 2px 5px 20px rgb(167, 167, 167);
+        
+    &:hover {
+        /*Application de la luminosité à l'aide de la propriété filter
+        Le CSS applique une valeur de multiplicateur linéaire sur un élément ou une image d'entrée, 
+        rendant l'image plus claire ou plus sombre.brightness()*/
+            filter: brightness(1.1);
+            box-shadow: 3px 6px 20px rgb(137, 137, 137);
+        }
 }
-.restaurants_card {
-    width: 95%;
+
+/* -- fin code EXPLORER -------------------------------- */
+
+/*--code OPERATION (Fonctionnement)-------------------------------------*/
+
+.operation {
+    padding: 30px 15px;
+
+    &_header {
+        font-size: 16px;
+        margin: 0px 0px 35px 20px;
+    }
+
+    &_cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding-left: 10px;
+
+        &_card {
+            display: flex;
+            align-items: center;
+            background-color: #e7e7e762;
+            width: 30%;
+            height: 100px;
+            box-shadow: 2px 5px 20px rgba(167, 167, 167, 0.5);
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: default;
+            /* property name | duration | easing function */
+            transition: transform 250ms ease-in-out;
+            &:hover {
+                transform: scale(1.01);
+                background-color: #9256dc21;
+                .operation_cards_card_icon {
+                        color: $color-primary;
+                }
+            }
+
+            &_number {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-width: 35px;
+                height: 35px;
+                margin-left: -20px;
+                color: white;
+                background-color: $color-primary;
+                border-radius: 30px;
+            }
+
+            &_icon {
+                color: rgba(0, 0, 0, 0.5);
+                padding: 0px 20px;
+                font-size: 25px;
+            }
+
+            &_title {
+                padding-right: 5px;
+            }
+        }
+    }
 }
-.restaurants_card_fig_img {
-    height: 250px;
+
+/* --fin code OPERATION (Fonctionnement)-------------------------------------*/
+
+/*-- code RESTAURANTS ------------------------------------------------------*/
+
+.restaurants {
+    background-color: $bg-clr-main;
+    margin-top: 40px;
+    padding: 10px 0px 50px 0px;
+
+    &_header_title {
+        padding: 30px 0px 30px 30px;
+        font-size: 24px;
+    }
+    
+    &_cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-content: center;
+    }
+
+    &_card {
+        position: relative;
+        margin: 10px 0px 20px 0px;
+        border-radius: 20px;
+        box-shadow: 0 0 16px #0000002e;
+        box-sizing: border-box;
+        width: 47%;
+        transition: transform 250ms ease-in-out;
+        &:hover {
+            transform: scale(1.01);
+        }
+
+        &_fig {
+            margin: 0;
+
+            &_img {
+                object-fit: cover;
+                border-radius: 20px 20px 0px 0px;
+                width: 100%;
+                height: 280px;
+            }
+
+            &_caption {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                position: relative;
+                margin: 0;
+                padding: 0px 0px 5px 25px;
+                line-height: 10px;
+            }
+        }
+    }
+
+    &_icons {
+        /*position: absolute :pour superposer les icons lun sur lautr*/
+        position: absolute;
+        bottom: 1.9rem;
+        right: 2.3rem;
+        width: 26px;
+        margin-top: -20px;
+    }
+
 }
-.footer {
-    padding-bottom: 20px;
-}
-.footer_links {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 30px;
-    padding: 0;
-    padding-inline-start: 20px;
-}
-.header_icon {
-    font-size: 20px;
-}
-.banner_img {
-    height: 370px;
-}
+
 .icons {
-    font-size: 23px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 25px;
+
+    & input[type="checkbox"]:checked~.icons-liked {
+        display: inline-block;
+        opacity: 1;
+    }
+    
+    & input[type="checkbox"]:checked~.icons-notLiked {
+        display: none;
+    }
+    /*pour le romplissage*/
+    &:hover .icons-liked {
+        opacity: 1;
+    }
+
+    &-notLiked {
+        position: absolute;
+    }
+    
+    &-liked {
+        position: relative;
+        background: linear-gradient(160deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%);
+        /*La propriété CSS définit si l'arrière-plan d'un élément s'étend sous sa zone de bordure, 
+        sa zone de remplissage ou sa zone de contenu.background-clip*/
+        /*pour Firefox*/
+        background-clip: text;
+        /*pour Chrome*/
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: opacity 500ms ease-in-out;
+        opacity: 0;
+    }
 }
-.menu {
+
+.new {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 18px;
+    margin: 0;
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: #4d7052;
+    z-index: 40;
+    background-color: $color-tertiary;
+}
+
+/* <!-- fin code RESTAURANTS ---------------------------------------------------------------> */ 
+
+/* --code FOOTER --------------------------------------------------*/ 
+
+.footer {
+    background-color: #313131;
+    padding: 30px 0px 30px 0px;
+
+    &_logo {
+        filter: invert(100%);
+        width: 130px;
+        padding: 0px 0px 5px 40px;
+        max-width: 1440px;
+    }
+
+    &_links {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding-top: 10px;
+        padding-inline-start: 0;
+    }
+
+    &_link {
+        color: white;
+        line-height: 30px;
+        &:hover {
+            text-decoration: underline;
+        }
+
+        &_icon {
+            margin-right: 5px;
+        }
+
+        & .fa-utensils {
+            font-size: 19px;
+            margin-right: 10px;
+        }
+    }
+}
+
+/* --fin code FOOTER -----------------------------------------------------*/
+
+/*fin code PAGE principal*/ 
+
+
+/* /*code des page menu------------------------------------------ */ 
+
+
+@keyframes itemAppear {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+/* --code HEADER ---------------------------------------*/ 
+
+.header_icon {
     position: relative;
-    z-index: 5;
-    border-radius: 40px 40px 0px 0px;
-    margin-top: -40px;
+    left: 20px;
+    font-size: 20px;
+    color: rgb(32, 32, 32);
+    &:hover {
+        color: $color-tertiary;
+    }
 }
-.menu_header {
-    justify-content: space-between;
-    padding-top: 0;
+/* --fin code HEADER ---------------------------------------*/
+
+/*-- code BANNER (banderole image-restaurants)------------------*/ 
+.banner_img {
+    object-fit: cover;
+    width: 100%;
+    height: 400px;
 }
-.menu_header_title {
-    margin-left: 20px;
-    font-size: 30px;
+/*-- code BANNER (banderole image-restaurants)----------------- */ 
+
+/*!--code MENU ----------------------------------------- */
+
+.menu {
+    background-color: $bg-clr-main;
+    margin-top: -20px;
+    padding-bottom: 20px;
+
+    &_header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 10px;
+        margin-bottom: 20px;
+
+        &_title {
+            font-family: 'Shrikhand', serif;
+            font-size: 33px;
+            margin-right: 25px;
+        }
+
+        &_icons {
+            margin-right: 30px;
+        }
+    }
+
+    &_categories {
+        display: flex;
+    }
+
+    &_title {
+        align-self: flex-start;
+        padding: 0px 17px;
+        line-height: 0;
+
+        &_underline {
+            align-self: flex-start;
+            width: 50px;
+            height: 3px;
+            margin: 5px 0px 10px 18px;
+            background-color: $color-tertiary;
+        }
+    }
+    
+    &_cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    &_card {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 0 0 10px #00000016;
+        margin: 15px 0px;
+        width: 95%;
+        height: 80px;
+        overflow: hidden;
+        cursor: pointer;
+        transform: scale(0);
+        animation: itemAppear 500ms ease-in-out;
+        animation-fill-mode: forwards;
+
+        &:hover .menu_card_price {
+            margin-right: 25%;
+        }
+        
+        &:hover .menu_card_check {
+            position: absolute;
+            right: 0rem;
+        }
+
+        &:hover .menu_card_check_icon {
+            transform: rotate(0deg);
+        }
+
+        &_titles {
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            overflow: hidden;
+            & p, h4 {
+                display: block;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                margin: 5px 20px;
+            }
+        }
+
+        &_price {
+            padding-right: 25px;
+            transition-duration: 1200ms;
+        }
+
+        &_check {
+            position: absolute;
+            right: -13rem;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            background-color: $color-tertiary;
+            height: 80px;
+            width: 25%;
+            transition-duration: 1200ms;
+
+            &_icon {
+                color: white;
+                font-size: 28px;
+                transform: rotate(360deg);
+                transition-duration: 800ms;
+                transition-delay: 500ms;
+            }
+        }
+    }
 }
-.menu_categories {
-    flex-direction: column;
+
+@for $i from 0 to 9 {
+    .delay_#{$i} {
+        animation-delay: 1s * calc($i / 6);
+    }
 }
-.menu_card {
-    margin: 10px 0px;
+
+.command {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px 35px 0px;
+
+    &_link {
+        width: 200px;
+        height: 50px;
+        font-size: 20px;
+    }
 }
+
+/*--fin code MENU -----------------------------------------*/ 
