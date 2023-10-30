@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./public/css/style.css" />
+    <link rel="shortcut icon" href="./public/images/logo/ohmyfood.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Roboto:wght@300;400&family=Shrikhand&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/427a8b27ad.js" crossorigin="anonymous"></script>
+    <title>La Palette du Goût</title>
+    <meta name="description" content="" />
+</head>
+
+<body>
+<!--code HEADER ------------------------------------------------->
+    <header class="header">
+        <a href="./index.html"><i class="fa-solid fa-arrow-left header_icon"></i></a>
+        <img class="header_logo" src="./public/images/logo/ohmyfood.png" alt="ohmyfood-logo" />
+    </header>
+<!--fin code HEADER --------------------------------------------->
+
+<!-- MAIN ----------------------------->
+    <main>
+<!-- code BANNER (banderole image-restaurants)---------------------------------------->
+        <div class="banner">
+            <img class="banner_img" src="./public/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="La Palette du Goût" />
+        </div>
+<!--fin code BANNER (banderole image-restaurants)---------------------------------->
+
+<!--code MENU ---------------------------------------------------------->
+        <section class="menu">
+            <header class="menu_header">
+                <h1 class="menu_header_title">La palette du goût</h1>
+                <label class="menu_header_icons icons">
+                    <input type="checkbox" id="restaurant1" name="restaurant-liked" value="1" />
+                    <i class="fa-regular fa-heart icons-notLiked"></i>
+                    <i class="fa-solid fa-heart icons-liked"></i>
+                </label>
+            </header>
+
+            <div class="menu_categories center">
+                <div class="menu_cards">
+                    <h3 class="menu_title Roboto_light">ENTRÉES</h3>
+                    <span class="menu_title_underline"></span>
+
+                    <article class="menu_card delay_0">
+                        <div class="menu_card_titles">   
+                           <h4 class="menu_card_title Roboto_bold">Fricassée d'escargot</h4>
+                           <p class="menu_card_subtitle Roboto_light">Au piment d'espelette</p>
+                        </div>
+                        <div class="menu_card_price Roboto_bold">25€</div>
+                        <div class="menu_card_check"><i class="fa-regular fa-circle-check menu_card_check_icon"></i></div>
+                     </article>
+
+                    <article class="menu_card delay_1">
+                        <div class="menu_card_titles"> 
+                            <h4 class="menu_card_title Roboto_bold">Foie gras de canard mi-cuit</h4>
+                            <p class="menu_card_subtitle Roboto_light">Et ses copeaux de truffe noire</p>
+                        </div>
+                        <div class="menu_card_price Roboto_bold">35€</div>
+                        <div class="menu_card_check"><i class="fa-regular fa-circle-check menu_card_check_icon"></i></div>
+                    </article>
+
+                    <article class="menu_card delay_2">
+                        <div class="menu_card_titles"> 
+                            <h4 class="menu_card_title Roboto_bold">Oeuf au plat</h4>
+                            <p class="menu_card_subtitle Roboto_light">Assaisonné à la truffe sur lit de caviar</p>
+                        </div>
+                        <div class="menu_card_price Roboto_bold">20€</div>
+                        <div class="menu_card_check"><i class="fa-regular fa-circle-check menu_card_check_icon"></i></div>
+                    </article>
+                </div>
+
+                <div class="menu_cards">
+                    <h3 class="menu_title Roboto_light">PLATS</h3>
+                    <span class="menu_title_underline"></span>
+
+                    <article class="menu_card delay_3">
+                        <div class="menu_card_titles">   
+                            <h4 class="menu_card_title Roboto_bold">Filet de boeuf aux herbes</h4>
+                            <p class="menu_card_subtitle Roboto_light">Accompagné de sa ribambelle de légumes</p>
+                        </div>
+                        <div class="menu_card_price Roboto_bold">40€</div>
+                        <div class="menu_card_check"><i class="fa-regular fa-circle-check menu_card_check_icon"></i></div>
+                    </article>
+
+                    <article class="menu_card delay_4">
+                        <div class="menu_card_titles"> 
+                            <h4 class="menu_card_title Roboto_bold">Parmentier de queue de boeuf</h4>
+                            <p class="menu_card_subtitle Roboto_light">À la truffe noire sur sa purée de panais</p>
+                        </div>
+                        <div class="menu_card_price Roboto_bold">35€</div>
+                        <div class="menu_card_check"><i class="fa-regular fa-circle-check menu_card_check_icon"></i></div>
+                    </article>
+
+                    <article class="menu_card delay_5">
+                        <div class="menu_card_titles"> 
+                            <h4 class="menu_card_title Roboto_bold">Filet de Turbot</h4>
+                            <p class="menu_card_subtitle Roboto_light">Aux agrumes</p>
+                        </div>
+                        <div class="menu_card_price Roboto_bold">44€</div>
+                        <div class="menu_card_check"><i class="fa-regular fa-circle-check menu_card_check_icon"></i></div>
+                    </article>
+                </div>
+
+                <div class="menu_cards">
+                    <h3 class="menu_title Roboto_light">DESSERTS</h3>
+                    <span class="menu_title_underline"></span>
+
+                    <article class="menu_card delay_6">
+                        <div class="menu_card_titles">   
+                            <h4 class="menu_card_title Roboto_bold">Paris-Brest</h4>
+                            <p class="menu_card_subtitle Roboto_light">Revisité</p>
+                        </div>
+                        <div class="menu_card_price Roboto_bold">18€</div>
+                        <div class="menu_card_check"><i class="fa-regular fa-circle-check menu_card_check_icon"></i></div>
+                    </article>
+
+                    <article class="menu_card delay_7">
+                        <div class="menu_card_titles"> 
+                            <h4 class="menu_card_title Roboto_bold">Macaron au chocolat d'exception</h4>
+                            <p class="menu_card_subtitle Roboto_light">Et glace à la vanille de Madagascar</p>
+                        </div>
+                        <div class="menu_card_price Roboto_bold">22€</div>
+                        <div class="menu_card_check"><i class="fa-regular fa-circle-check menu_card_check_icon"></i></div>
+                    </article>
+
+                    <article class="menu_card delay_8">
+                        <div class="menu_card_titles"> 
+                            <h4 class="menu_card_title Roboto_bold">Mousse au chocolat</h4>
+                            <p class="menu_card_subtitle Roboto_light">Au piment d'espelette et à la truffe noire</p>
+                        </div>
+                        <div class="menu_card_price Roboto_bold">23€</div>
+                        <div class="menu_card_check"><i class="fa-regular fa-circle-check menu_card_check_icon"></i></div>
+                    </article>
+                </div>
+            </div>
+
+            <footer class="command">
+                <a href="#" class="command_link btn_main">Commander</a>
+            </footer>
+        </section>
+<!--fin code MENU ------------------------------------------------------------>
+    </main>
+<!--fin MAIN --------------------------------->
+
+<!--code FOOTER ------------------------------------------------------->
+    <footer class="footer">
+        <div class="footer_container center">
+            <img class="footer_logo" src="./public/images/logo/ohmyfood.png" alt="ohmyfood-logo" />
+
+            <ul class="footer_links">
+                <li><a href="#" class="footer_link"><i class="fa-solid fa-utensils footer_link_icon"></i>Proposer un restaurant</a></li>
+                <li><a href="#" class="footer_link"><i class="fa-solid fa-handshake-angle footer_link_icon"></i>Devenir partenaire</a></li>
+                <li><a href="#" class="footer_link">Mentions légales</a></li>
+                <li><a href="mailto:ohmyfood@contact.com" class="footer_link">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+<!--fin code FOOTER --------------------------------------------------->
+</body>
+</html>
