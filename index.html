@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./public/css/style.css" />
+    <link rel="shortcut icon" href="./public/images/logo/ohmyfood.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/427a8b27ad.js" crossorigin="anonymous"></script>
+    <title>Ohmyfood !</title>
+    <meta name="description" content="Découvrez Ohmyfood ! Commandez vos plats simplement, et dégustez au restaurant. Assitôt assis, aussitôt servis !" />
+</head>
+
+<body>
+    <div class="loader">
+        <div class="load">
+            <div class="load_bar load_bar-1"> </div>
+            <div class="load_bar load_bar-2"></div>
+            <div class="load_bar load_bar-3"></div>
+            <div class="load_bar load_bar-4"></div>
+            <div class="load_bar load_bar-5"></div>
+        </div>
+     </div>
+<!--code HEADER ----------------------------------------------------->
+    <header class="header">
+        <img class="header_logo" src="./public/images/logo/ohmyfood.png" alt="ohmyfood-logo" />
+    </header>
+<!--fin code HEADER -------------------------------------------->
+
+<!-- MAIN -------------------------------------------------->
+    <main>
+<!-- code LOCATION (barre de recherche)------------------------------------------------->
+        <form class="location_search" method="GET" action="#">
+            <i class="fa-solid fa-location-dot location_search_icon"></i>
+            <input class="location_search_searchInput" type="search" placeholder="Paris, Belleville" />
+        </form>
+<!-- fin code LOCATION (barre de recherche) --------------------------------------->
+
+<!-- code EXPLORER --------------------------------------------------------->
+        <section class="explorer">
+            <h1 class="explorer_title Roboto_bold">Réservez le menu qui vous convient</h1>
+            <p class="explorer_subtitle Roboto_light">Décourez des restaurants d'exeption, sélectionnés par nos soins.</p>
+            <a href="#restaurants" class="explorer_link btn_main">Explorer nos restaurants</a>
+        </section>
+<!-- fin code EXPLORER -------------------------------->
+
+<!--code OPERATION (Fonctionnement)------------------------------------->    
+        <section class="operation center">
+            <header class="operation_header">
+                <h2 class="operation_title Roboto_bold">Fonctionnement</h2>
+            </header>
+
+            <div class="operation_cards">
+                <div class="operation_cards_card">
+                    <div class="operation_cards_card_number">1</div>
+                    <i class="fa-solid fa-mobile-screen-button operation_cards_card_icon"></i>
+                    <h3 class="operation_cards_card_title Roboto_bold">Choisissez un restaurant</h3> 
+                </div>
+
+                <div class="operation_cards_card">
+                    <div class="operation_cards_card_number">2</div>
+                    <i class="fa-solid fa-list operation_cards_card_icon"></i>
+                    <h3 class="operation_cards_card_title Roboto_bold">Composez votre menu</h3> 
+                </div>
+
+                <div class="operation_cards_card">
+                    <div class="operation_cards_card_number">3</div>
+                    <i class="fa-solid fa-store operation_cards_card_icon"></i>
+                    <h3 class="operation_cards_card_title Roboto_bold">Dégustez au restaurant</h3> 
+                </div>
+            </div>
+        </section>
+<!-- fin code OPERATION (Fonctionnement)---------------------------------------------->
+
+<!-- code RESTAURANTS ------------------------------------------------------>
+        <section id="restaurants" class="restaurants">
+            <header class="restaurants_header">
+                <h2 class="restaurants_header_title Roboto_bold center">Restaurants</h2>
+            </header>
+
+            <div class="restaurants_cards center">
+                <article class="restaurants_card restaurants_card_new">
+                    <a href="./la-palette-du-gout.html">
+                        <figure class="restaurants_card_fig">
+                            <img class="restaurants_card_fig_img" src="./public/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="La Palette du Goût" />
+                            <div class="new">Nouveau</div>
+                            <figcaption class="restaurants_card_fig_caption">
+                                <div>
+                                    <h3 class="restaurants_card_fig_caption_title Roboto_bold">La palette du goût</h3>
+                                    <p class="restaurants_card_city Roboto_light">Ménilmontant</p>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <label class="restaurants_icons icons">
+                        <input type="checkbox" id="restaurant1" name="restaurant-liked" value="1" />
+                        <i class="fa-regular fa-heart icons-notLiked"></i>
+                        <i class="fa-solid fa-heart icons-liked"></i>
+                    </label>
+                </article>
+
+                <article class="restaurants_card restaurants_card_new">
+                    <a href="./la-note-enchantee.html">
+                        <figure class="restaurants_card_fig">
+                            <img class="restaurants_card_fig_img" src="./public/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="La Note Enchantée" />
+                            <div class="new">Nouveau</div>
+                            <figcaption class="restaurants_card_fig_caption">
+                                <div>
+                                    <h3 class="restaurants_card_fig_caption_title Roboto_bold">La note enchantée</h3>
+                                    <p class="restaurants_card_city Roboto_light">Charonne</p>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <label class="restaurants_icons icons">
+                        <input type="checkbox" id="restaurant2" name="restaurant-liked" value="2" />
+                        <i class="fa-regular fa-heart icons-notLiked"></i>
+                        <i class="fa-solid fa-heart icons-liked"></i>
+                    </label>
+                </article>
+
+                <article class="restaurants_card">
+                    <a href="./a-la-francaise.html">
+                        <figure class="restaurants_card_fig">
+                            <img class="restaurants_card_fig_img" src="./public/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="À la Française" />
+                            <figcaption class="restaurants_card_fig_caption">
+                                <div>
+                                    <h3 class="restaurants_card_fig_caption_title Roboto_bold">À la française</h3>
+                                    <p class="restaurants_card_city Roboto_light">Cité Rouge</p>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <label class="restaurants_icons icons">
+                        <input type="checkbox" id="restaurant3" name="restaurant-liked" value="3" />
+                        <i class="fa-regular fa-heart icons-notLiked"></i>
+                        <i class="fa-solid fa-heart icons-liked"></i>
+                    </label>
+                </article>
+
+                <article class="restaurants_card">
+                    <a href="./le-delice-des-sens.html">
+                        <figure class="restaurants_card_fig">
+                            <img class="restaurants_card_fig_img" src="./public/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Le Délice des Sens" />
+                            <figcaption class="restaurants_card_fig_caption">
+                                <div>
+                                    <h3 class="restaurants_card_fig_caption_title Roboto_bold">Le délice des sens</h3>
+                                    <p class="restaurants_card_city Roboto_light">Folie-Méricourt</p>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <label class="restaurants_icons icons">
+                        <input type="checkbox" id="restaurant4" name="restaurant-liked" value="4" />
+                        <i class="fa-regular fa-heart icons-notLiked"></i>
+                        <i class="fa-solid fa-heart icons-liked"></i>
+                    </label>
+                </article>
+            </div>
+        </section>
+<!-- fin code RESTAURANTS --------------------------------------------------------------->
+    </main>
+<!-- fin MAIN ------------------------------------------->
+
+<!--code FOOTER ------------------------------------->
+    <footer class="footer">
+        <div class="footer_container center">
+            <img class="footer_logo" src="./public/images/logo/ohmyfood.png" alt="ohmyfood-logo" />
+
+            <ul class="footer_links">
+                <li><a href="#" class="footer_link"><i class="fa-solid fa-utensils footer_link_icon"></i>Proposer un restaurant</a></li>
+                <li><a href="#" class="footer_link"><i class="fa-solid fa-handshake-angle footer_link_icon"></i>Devenir partenaire</a></li>
+                <li><a href="#" class="footer_link">Mentions légales</a></li>
+                <li><a href="mailto:ohmyfood@contact.com" class="footer_link">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+<!--fin code FOOTER -------------------------------------->
+</body>
+</html>
