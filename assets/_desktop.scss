@@ -1,0 +1,64 @@
+@media screen and (min-width:1024px) {
+	main {
+		min-width: 1024px;
+	}
+	.explorer {
+		background: none;
+		background-color: $background-color_explorer;
+	}
+	.operation_cards {
+		flex-direction: column;
+		align-items: center;
+		padding-left: 15px;
+	}
+	.operation_cards_card {
+		width: 95%;
+		margin-bottom: 20px;
+		box-shadow: 1px 2px 20px rgba(167, 167, 167, 0.5);
+	}
+	.restaurants_card {
+		width: 95%;
+	}
+	.restaurants_card_fig_img {
+		height: 250px;
+	}
+	.footer {
+		padding-bottom: 20px;
+	}
+	.footer_links {
+		flex-direction: column;
+		align-items: flex-start;
+		margin-left: 30px;
+		padding: 0;
+		padding-inline-start: 20px;
+	}
+	.header_icon {
+		font-size: 20px;
+	}
+	.banner_img {
+		height: 370px;
+	}
+	.icons {
+		font-size: 23px;
+	}
+	.menu {
+		position: relative;
+		z-index: 5;
+		border-radius: 40px 40px 0px 0px;
+		margin-top: -40px;
+	}
+	.menu_header {
+		justify-content: space-between;
+		padding-top: 0;
+	}
+	.menu_header_title {
+		margin-left: 20px;
+		font-size: 30px;
+	}
+	.menu_categories {
+		flex-direction: column;
+	}
+	.menu_card {
+		margin: 10px 0px;
+	}
+}

@@ -87,7 +87,7 @@ input[type=checkbox] {
 }
 
 .center {
-  max-width:600px;
+  min-width: 300px;
   margin: auto;
 }
 
@@ -225,6 +225,7 @@ i.fa-solid.location_icon {
 /* -- fin code LOCATION (barre de recherche) ---------------------------------------*/
 /* --  code EXPLORER -------------------------------- */
 .explorer {
+  background-color: rgba(220, 220, 220, 0.3843137255);
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -234,16 +235,16 @@ i.fa-solid.location_icon {
   padding: 50px 5px 40px 5px;
 }
 .explorer_title {
-  font-size: 25px;
+  font-size: 29px;
   margin: 10px 5px;
 }
 .explorer_subtitle {
-  font-size: 22px;
+  font-size: 20px;
 }
 .explorer_link {
-  width: 232px;
-  height: 61px;
-  font-size: 18px;
+  width: 284px;
+  height: 66px;
+  font-size: 20px;
 }
 
 /*bouttan (commander)*/
@@ -276,19 +277,19 @@ i.fa-solid.location_icon {
 }
 .operation_cards {
   flex-direction: column;
-		align-items: center;
-		padding-left: 30px;
+  align-items: center;
+  padding-left: 20px;
 }
 .operation_cards_card {
   display: flex;
   align-items: center;
   background-color: rgba(231, 231, 231, 0.3843137255);
-  height: 73px;
-  width: 100%;
+  height: 77px;
+  width: 95%;
   margin-bottom: 20px;
   box-shadow: 1px 2px 20px rgba(167, 167, 167, 0.5);
   border-radius: 30px;
-  font-size: 12px;
+  font-size: 14px;
   cursor: default;
   /* property name | duration | easing function */
   transition: transform 250ms ease-in-out;
@@ -343,6 +344,7 @@ i.fa-solid.location_icon {
   border-radius: 20px;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.1803921569);
   box-sizing: border-box;
+  background-color: white;
   width: 95%;
   transition: transform 250ms ease-in-out;
 }
@@ -435,16 +437,16 @@ i.fa-solid.location_icon {
 .footer_logo {
   filter: invert(100%);
   width: 130px;
-  padding: 17px 0px 4px 20px;
-  max-width: 1440px;
+  padding: 23px 0px 1px 25px;
+  min-width: 140px;
 }
 .footer_links {
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-left: 0px;
+  margin-left: 10px;
   padding: 0;
   padding-inline-start: 20px;
-  display: flex;
 }
 .footer_link {
   color: white;
@@ -493,28 +495,30 @@ i.fa-solid.location_icon {
   height: 370px;
 }
 
+.icons {
+  font-size: 23px;
+}
+
 /*-- code BANNER (banderole image-restaurants)----------------- */
 /*!--code MENU ----------------------------------------- */
 .menu {
   background-color: #F2F2F2;
   position: relative;
-		z-index: 5;
-		border-radius: 40px 40px 0px 0px;
-		margin-top: -40px;
+  z-index: 5;
+  border-radius: 40px 40px 0px 0px;
+  margin-top: -40px;
   padding-bottom: 20px;
 }
 .menu_header {
   display: flex;
   justify-content: space-between;
-		padding-top: 0;
-  align-items: center;
+  padding-top: 0;
   margin-bottom: 20px;
 }
 .menu_header_title {
   font-family: "Shrikhand", serif;
-  font-size: 30px;
   margin-left: 20px;
-  margin-right: 25px;
+  font-size: 30px;
 }
 .menu_header_icons {
   margin-right: 30px;
@@ -550,7 +554,7 @@ i.fa-solid.location_icon {
   background-color: white;
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.0862745098);
-  margin:10px 0px;
+  margin: 10px 0px;
   width: 95%;
   height: 80px;
   overflow: hidden;
