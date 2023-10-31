@@ -1,15 +1,22 @@
 @media screen and (min-width: 768px) and (max-width: 1100px) {
 	.operation_cards {
+		display: flex;
 		flex-direction: column;
-		align-items: center;
+		align-items: flex-start;
+		padding-left: 50px;
 	}
 	.operation_cards_card {
-		width: 95%;
+		width: 45%;
+		font-size: 16px;
 		margin-bottom: 20px;
 		box-shadow: 1px 2px 20px rgba(167, 167, 167, 0.5);
 	}
+	
 	.restaurants_card_fig_img {
-		height: 250px;
+		height: 300px;
+	}
+	.restaurants_card {
+		width: 47%;	
 	}
 	.header_icon {
 		font-size: 20px;
@@ -18,13 +25,14 @@
 		justify-content: space-between;
 	}
 	.menu_header_title {
-		margin-left: 20px;
+		margin-left:35%;
 	}
 	.menu_categories {
 		flex-wrap: wrap;
 	}
 	.menu_cards {
-		width: 50%;
+        width: 60%;
+    	padding-left: 20%;
 	}
 	.menu_card {
 		margin: 10px 0px;
